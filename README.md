@@ -9,6 +9,8 @@ Data Structures &amp; Algorithms using Modern C++.
 4. Queue using Array
 5. Queue using Linked List
 
+---
+
 ## Algorithms
 
 ### Searching Algorithms
