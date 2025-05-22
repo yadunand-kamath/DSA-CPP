@@ -1,6 +1,8 @@
 # DSA-CPP
 Data Structures &amp; Algorithms using C++.
 
+---
+
 ## Data Structures
 
 1. Linked List
