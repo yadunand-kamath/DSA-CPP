@@ -17,7 +17,7 @@ int SearchingAlgorithms::BinarySearch(std::vector<int> arr, int searchKey)
     SortingAlgorithms::SelectionSort(arr);
 
     int startIdx = 0;
-    int endIdx = arr.size() - 1;
+    int endIdx = static_cast<int>(arr.size()) - 1;
 
     while (startIdx <= endIdx)
     {

@@ -27,13 +27,3 @@ void Recursion::TowerOfHanoi(int disks, int src, int dst, int aux)
     std::cout << src << " -> " << dst << std::endl;
     Recursion::TowerOfHanoi(disks - 1, aux, dst, src);
 }
-
-int main()
-{
-    std::cout << "Factorial of 5: " << Recursion::Factorial(5) << std::endl;
-    std::cout << "Fib of 5: " << Recursion::Fibonacci(5) << std::endl;
-
-    Recursion::TowerOfHanoi(2, 1, 2, 3);
-
-    return 0;
-}
