@@ -7,6 +7,7 @@ StackList::StackList()
 
 StackList::~StackList()
 {
+	delete top;
 }
 
 void StackList::Push(int value)

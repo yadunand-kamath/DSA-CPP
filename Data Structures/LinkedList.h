@@ -32,14 +32,20 @@ public:
 	LinkedList();
 	~LinkedList();
 	
+	Node* GetHead() const;
+	void SetHead(Node* head);
 	void PushFront(int value);
 	void PushBack(int value);
 	void PopFront();
 	void PopBack();
 	void InsertNode(int value, int position);
-	void PrintList();
+	void PrintList(Node* head);
 	int Length();
-	void ReverseList();
+	Node* ReverseList(Node* head);
+	Node* RecursiveReverse(Node* head);
+	void UseRecursiveReverse();
+	Node* MidOfList(Node* head);
+	bool IsListPalindrome(Node* head);
 
 private:
 	Node* head;

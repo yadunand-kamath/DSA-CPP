@@ -32,7 +32,7 @@ int StackArr::Peek()
 
 bool StackArr::Empty()
 {
-	bool isEmpty = (top == -1) ? false : true;
+	bool isEmpty = (top == -1) ? true : false;
 	return isEmpty;
 }
 

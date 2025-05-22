@@ -10,6 +10,16 @@ LinkedList::~LinkedList()
 	std::cout << std::endl << "... LinkedList Obj Destroyed ..." << std::endl;
 }
 
+Node* LinkedList::GetHead() const
+{
+	return head;
+}
+
+void LinkedList::SetHead(Node* head)
+{
+	this->head = head;
+}
+
 void LinkedList::PushFront(int value)
 {
 	Node* newNode = new Node(value);
@@ -95,7 +105,7 @@ void LinkedList::InsertNode(int value, int position)
 	newNode->next = temp;
 }
 
-void LinkedList::PrintList()
+void LinkedList::PrintList(Node* head)
 {
 	if (head == nullptr)
 	{
@@ -129,7 +139,7 @@ int LinkedList::Length()
 	return length;
 }
 
-void LinkedList::ReverseList()
+Node* LinkedList::ReverseList(Node* head)
 {
 	Node* prevNode{ nullptr };
 	Node* currNode{ head };
@@ -143,5 +153,50 @@ void LinkedList::ReverseList()
 		currNode = nextNode;
 	}
 
-	head = prevNode;
+	return prevNode;
+}
+
+Node* LinkedList::RecursiveReverse(Node* head)
+{
+	if (head == nullptr || head->next == nullptr)
+		return head;
+
+	Node* newNode = RecursiveReverse(head->next);
+	head->next->next = head;
+	head->next = nullptr;
+
+	return newNode;
+}
+
+void LinkedList::UseRecursiveReverse()
+{
+	head = RecursiveReverse(head);
+}
+
+Node* LinkedList::MidOfList(Node* head)
+{
+	Node* slow{ head };
+	Node* fast{ head };
+
+	while (fast != nullptr && fast->next != nullptr) {
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+
+	return slow;
+}
+
+bool LinkedList::IsListPalindrome(Node* head)
+{
+	Node* slow = MidOfList(head);
+	slow = ReverseList(slow);
+
+	while (slow != nullptr) {
+		if (head->data != slow->data)
+			return false;
+		head = head->next;
+		slow = slow->next;
+	}
+
+	return true;
 }
